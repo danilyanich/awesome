@@ -81,3 +81,14 @@ popd
 ```
 
 `pushd` allows you to navigate to a `directory_path`, do work there, and then `popd` brings you back to where you were originally without having to remember the path back there.
+
+
+
+## Repeat last command with sudo
+
+When you’re trying to execute command which requires privileges, but you forgot `sudo`. Instead of retyping it all out use:
+```sh
+sudo !!
+```
+
+`!!` repeats your previous command.
