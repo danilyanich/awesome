@@ -68,3 +68,16 @@ The bash shell comes with several builtin commands for modifying the behavior of
 - `set -o pipefail` - Set the exit code of a pipeline to that of the rightmost command to exit with a non-zero status, or to zero if all commands of the pipeline exit successfully.
 - `set -u` - Treat unset variables as an error and exit immediately.
 - `set -x` - Print each command before executing it.
+
+
+
+## Quick folder navigation
+
+Regular `cd` can get cumbersome if you want to go to a folder, run a script, and come back to where you are.
+
+```sh
+pushd directory_path
+popd
+```
+
+`pushd` allows you to navigate to a `directory_path`, do work there, and then `popd` brings you back to where you were originally without having to remember the path back there.
