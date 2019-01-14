@@ -1,5 +1,7 @@
 # Bash
 
+A collection of handy bash commands, scripts and tips.
+
 
 
 ## Copy files from one machine to another in trusted network
