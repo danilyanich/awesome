@@ -38,6 +38,7 @@ curl -s http://whatismyip.akamai.com/ && echo
 ```
 
 Make a request to [whatismyip.akamai.com](http://whatismyip.akamai.com/) and add trailing endline for god sake.
+- `curl -s` - Suppress progress indicator.
 
 
 
@@ -48,3 +49,20 @@ ssh -nNT -L local_port:remote_host:remote_port username@remote_address
 ```
 
 Establish port forwarding from `localhost:local_port` on local machine to `remote_host:remote_port` on remote machine. Flags `-nNT` tells ssh not to allocate new tty on remote machine.
+
+
+
+## Safer bash scripts
+
+Put the following line to the beginning of your bash script:
+
+```bash
+set -euxo pipefail
+```
+
+The bash shell comes with several builtin commands for modifying the behavior of the shell itself. `set` command has several options that will help us write safer scripts.
+
+- `set -e` - Exit immediately when a command fails.
+- `set -o pipefail` - Set the exit code of a pipeline to that of the rightmost command to exit with a non-zero status, or to zero if all commands of the pipeline exit successfully.
+- `set -u` - Treat unset variables as an error and exit immediately.
+- `set -x` - Print each command before executing it.
