@@ -7,12 +7,12 @@
 If you completely trust everyone in the network and you can connect a port of the destination machine directly, you can use netcat.
 
 On destination:
-```bash
+```sh
 nc -l -p port 0.0.0.0 | tar zxvf - -C destination_directory
 ```
 
 On source:
-```bash
+```sh
 tar zxcf - filename | nc destination_ip port
 ```
 
@@ -22,7 +22,7 @@ This is the fastest possible way to send a file from one computer to another usi
 
 ## Determine machine IP address that is currently used for internet connections
 
-```bash
+```sh
 ip route get 8.8.8.8 | awk '{print $NF; exit}'
 ```
 
@@ -33,7 +33,7 @@ This is the Google's public DNS resolver.
 
 ## Determine machine external IP address for HTTP connections
 
-```bash
+```sh
 curl -s http://whatismyip.akamai.com/ && echo
 ```
 
@@ -44,7 +44,7 @@ Make a request to [whatismyip.akamai.com](http://whatismyip.akamai.com/) and add
 
 ## Establish SSH tunnel with port forwarding from local machine to remote machine
 
-```bash
+```sh
 ssh -nNT -L local_port:remote_host:remote_port username@remote_address
 ```
 
@@ -56,7 +56,7 @@ Establish port forwarding from `localhost:local_port` on local machine to `remot
 
 Put the following line to the beginning of your bash script:
 
-```bash
+```sh
 set -euxo pipefail
 ```
 
