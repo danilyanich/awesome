@@ -92,3 +92,12 @@ sudo !!
 ```
 
 `!!` repeats your previous command.
+
+
+
+## Connect to remote docker daemon
+
+```sh
+ssh -nNT -L 2375:/var/run/docker.sock <ssh connection>
+export DOCKER_HOST=tcp://localhost:2375
+```
